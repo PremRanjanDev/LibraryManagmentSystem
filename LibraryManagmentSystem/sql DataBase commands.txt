@@ -1,0 +1,40 @@
+create database Library;
+
+use Library;
+
+create table Book 
+(Book_ID varchar(10) NOT NULL primary key, 
+Name varchar(35), 
+Category varchar(30), 
+Author varchar(35), 
+Publisher varchar(40), 
+Edition varchar(10), 
+Price float, 
+Issued_To_Member varchar(10));
+
+create table Member 
+(Member_ID varchar(10) NOT NULL primary key, 
+Name varchar(35), 
+Roll_No varchar(20), 
+Branch varchar(40), 
+Semester varchar(10), 
+Gender varchar(10), 
+Phone varchar(12),
+Email varchar(50),
+Address text,
+Issued_Book varchar(10));
+
+Create Table Issue
+(Member_ID nchar(10) NOT NULL,
+Book_ID nchar(10) NOT NULL, 
+Issue_Date varchar(50));
+
+Create Table Setting
+(Variable varchar(50) NOT NULL primary key, 
+Value varchar(50) NOT NULL);
+
+insert into Setting values ('Maximum Days', 15)
+insert into Setting values ('Fine Charge', 1)
+insert into Setting values ('Admin Password', 'admin')
+insert into Setting values ('Emp Username', 'emp')
+insert into Setting values ('Emp Password', 'emp')
